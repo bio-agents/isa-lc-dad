@@ -1,0 +1,122 @@
+{
+    "profile": "tabular-data-package",
+    "name": "metabolite_profiling_lc_dad_report_datapackage",
+    "title": "Metabolite Profiling Diode Array Detector Readouts Data Package",
+    "homepage" : "https://github.com/proccaserra",
+    "version": "1.0",
+    "keywords": [
+        "metabolite",
+        "treatment",
+        "retention time",
+        "signal intensity",
+        "wavelength",
+        "STATO ontology",
+        "ISA format",
+        "EMBL-EBI Metabolights"
+    ],
+    "licenses": [{
+        "path": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "name": "CC0_1.0",
+        "version": "1.0",
+        "id": "CC0 1.0"
+    }],
+    "sources": [{
+        "title": "University of Oxford e-Research Centre",
+        "path": "http://oerc.ox.ac.uk"
+    }],
+    "contributors": [{
+        "title": "Philippe Rocca-Serra",
+        "email": "proccaserra@gmail.com",
+        "path": "http://www.stato-ontology.org"
+    }],
+    "maintainers": [{
+        "title": "Philippe Rocca-Serra",
+        "email": "proccaserra@gmail.com",
+        "path": "http://www.stato-ontology.org"
+    }],
+    "publishers": [{
+        "title": "Philippe Rocca-Serra",
+        "email": "proccaserra@gmail.com",
+        "path": "http://www.stato-ontology.org"
+    }],
+    "resources": [{
+        "name": "metabolite_profiling_lc_dad_report_datapackage",
+        "title": "reporting LC-DAD read outs",
+        "encoding":"utf-8",
+        "profile": "tabular-data-resource",
+        "path": "lc_da_readout_data.csv",
+        "schema": {
+            "fields": [
+            {
+                "name": "retention_time",
+                "title": "retention time",
+                "description": "A time interval from the start of chromatography when an analyte exits a chromatographic column.",
+                "format": "default",
+                "type": "number",
+                "rdfType": "http://purl.obolibrary.org/obo/MS_1000894",
+                "constraints" : { "required": true }
+            },
+                        {
+                "name": "rt_unit",
+                "title": "retention time unit",
+                "description": "the unit associated with wavelength",
+                "format": "default",
+                "type": "string",
+                "rdfType": "",
+                "constraints": {"required": false}
+            }, 
+            {
+                "name": "wavelength",
+                "title": "wavelength",
+                "description": "A physical quality which is equal to the distance between repeating units of a wave pattern.",
+                "format": "default",
+                "type": "number",
+                "rdfType": "http://purl.obolibrary.org/obo/PATO_0001242",
+                "constraints": { "required": true }
+            },
+            {
+                "name": "wavelength_unit",
+                "title": "unit",
+                "description": "the unit associated with wavelength",
+                "format": "default",
+                "type": "string",
+                "rdfType": "",
+                "constraints": {"required": false}
+            },  
+            {
+                "name": "signal_intensity",
+                "title": "signal itensity",
+                "description": "for a given wavelength and a given retention time, the readout obtained from the diode array detector",
+                "format": "default",
+                "type": "number",
+                "rdfType": "http://purl.obolibrary.org/obo/OBI_0002110",
+                "constraints": { "required": true }
+            }, 
+            {
+                "name": "var1_levels",
+                "title": "levels for variable 1",
+                "description": "discrete levels of an independent variable",
+                "format": "default",
+                "type": "string",
+                "rdfType": "http://purl.obolibrary.org/obo/STATO_0000265",
+                "constraints": {
+                    "required": true
+                }
+            },                            
+            {
+                "name": "treatment",
+                "title": "factor level combination",
+                "description": "a treatment group defined as combination of independent variable factor levels",
+                "format": "default",
+                "type": "string",
+                "rdfType": "http://purl.obolibrary.org/obo/STATO_0000264",
+                "constraints": {
+                    "required": true
+                }
+            }        
+            ]
+        }
+    }]
+    ,
+    "missingValues": ["-","NA"]
+}
